@@ -33,19 +33,23 @@ public class Aluno {
         }
 
         public void classificarPesoDoAluno(){
-            if (imcFinal <= 18.5){
+            if (imcFinal <18.6){
                 statusDoAluno= "ABAIXO DO PESO";
                 recomendacaoParaOAluno = "GANHO DE MASSA MUSCULAR";
 
-            }else if (imcFinal >=19 && imcFinal <=24.9){
+            }else if (imcFinal >=18.6 && imcFinal <25.0){
                 statusDoAluno= "PESO IDEAL";
                 recomendacaoParaOAluno= "CONTINUE O QUE ESTÁ FAZENDO, PARABÉNS";
 
-            }else if (imcFinal >=25.9 && imcFinal <=29.9){
+            } else if (imcFinal >=25.0 && imcFinal <30.0) {
+                statusDoAluno= "LEVEMENTE ACIMA DO PESO";
+                recomendacaoParaOAluno= "MELHORE A ALIMENTAÇÃO E SE HIDRATE-SE COM MAIS FREQUÊNCIA";
+                
+            } else if (imcFinal >=30.0 && imcFinal <35.0){
                 statusDoAluno= "OBESIDADE GRAU I";
                 recomendacaoParaOAluno= "PERDA DE MASSA MUSCULAR";
 
-            }else if (imcFinal >=30.0 && imcFinal <=34.9) {
+            }else if (imcFinal >=35.0 && imcFinal <40.0) {
                 statusDoAluno= "OBESIDADE GRAU II (SEVERA)";
                 recomendacaoParaOAluno= "TOME CUIDADO, PREOCURE UM ESPECIALISTA";
 
@@ -58,16 +62,15 @@ public class Aluno {
         }
 
         public void exibirResutadoFinalImcXStatusPeso(){
-            String valorImcComDoisDecimais= String.format("%.2f", imcFinal);
+            String imcComDoisDecimais= String.format("%.2f", imcFinal);
 
             System.out.println();
-            System.out.println("----------------- RESULTADO DO ALUNO(A) -----------------");
+            System.out.println("------------------------- RESULTADO DO ALUNO(A) ------------------------ ");
             System.out.println("Aluno(a): " +nomeAluno);
-            System.out.println("IMC final do(a)" +nomeAluno+ ": " +imcFinal);
-            System.out.println("Valor arrendondado do IMC:" +valorImcComDoisDecimais);
+            System.out.println("IMC final do(a)" +nomeAluno+ ": " +imcComDoisDecimais);
             System.out.println("Status: " +statusDoAluno);
             System.out.println("Recomendação: " +recomendacaoParaOAluno);
-            System.out.println("----------------------------------------------------------");
+            System.out.println("------------------------------------------------------------------------");
         }
 
 }
